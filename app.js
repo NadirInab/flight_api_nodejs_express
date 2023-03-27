@@ -122,6 +122,36 @@ let flights = [
     longitude: -122.4194,
     flight_status: 'Delayed',
     price: 1500,
+    seats: 160
+  },
+  { 
+    id: 9, 
+    date: '2023-04-09', 
+    from: 'San Francisco', 
+    to: 'Roma', 
+    airport: 'SFO',
+    airline: 'Italy Airlines',
+    aircraft: 'Airbus A350',
+    timezone: 'UTC-7',
+    latitude: 37.7749,
+    longitude: -122.4194,
+    flight_status: 'Delayed',
+    price: 800,
+    seats: 100
+  },
+  { 
+    id: 10, 
+    date: '2023-04-10', 
+    from: 'Agadir', 
+    to: 'Tanger', 
+    airport: 'SFO',
+    airline: 'Arabic Airlines',
+    aircraft: 'Airbus A350',
+    timezone: 'UTC-7',
+    latitude: 37.7749,
+    longitude: -122.4194,
+    flight_status: 'Delayed',
+    price: 1500,
     seats: 250
   },
 ];
