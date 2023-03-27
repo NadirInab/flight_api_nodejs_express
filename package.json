@@ -1,0 +1,15 @@
+{
+  "name": "flightapi",
+  "version": "1.0.0",
+  "description": "real time flight data",
+  "main": "index.js",
+  "scripts": {
+    "test": "fly",
+    "start": "node app.js"
+  },
+  "author": "nadir inab",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
