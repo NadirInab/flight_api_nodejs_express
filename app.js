@@ -193,10 +193,33 @@ let popular_destinatons = [
   },
   {
     id: 7,
-    city: 'Madrid',
+    city: 'Istanbul',
     image: 'https:\\test.com',
-    price: 1200
+    price: 1000
   },
+]
+
+// cheapest destinations : 
+
+let cheapest = [
+  {
+    id : 1, 
+    city : 'Rabat', 
+    image : 'http://test.com', 
+    price : 90
+  },
+  {
+    id : 2, 
+    city : 'Cairo', 
+    image : 'http://test.com', 
+    price : 80
+  },
+  {
+    id : 1, 
+    city : 'Jakarta', 
+    image : 'http://Jakarta.com', 
+    price : 70
+  }
 ]
 
 // Route to get all flights
@@ -235,12 +258,19 @@ app.post('/flights', (req, res) => {
 });
 
 // Route to get all popular destinations : 
-// app.get('/popular', (req, res) => {
-//   const popular = popular_destinatons.map((popular) => {
-//     return popular;
-//   })
-//   res.json(popular_destinatons) ;
-// })
+app.get('/popular', (req, res) => {
+  res.json(popular_destinatons) ;
+})
+
+// Route to add a new popular destination :
+app.post('/popular', (req, res)=>{
+  const newPopular = {
+    id: popular_destinatons.length + 1, 
+    ...req.body
+  } ;
+  popular_destinatons.push(newPopular) ;
+  res.json(newPopular) ;
+})
 
 app.listen(port, () => {
   console.log("Happy coding !!");
