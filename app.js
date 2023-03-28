@@ -1,8 +1,11 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
+const port = 3000;
 app.use(express.json());
+app.use(cors());
 
-// In-memory array of flights data
+//  Flights data
 let flights = [
   {
     id: 1,
@@ -18,15 +21,6 @@ let flights = [
     flight_status: 'On time',
     price: 1000,
     seats: 200,
-    popular_destinatons: [
-      {
-        id: 1,
-        city: 'Roma',
-        image: 'https:\\test.com',
-        price: 1200
-      }
-    ]
-
   },
   {
     id: 2,
@@ -165,6 +159,46 @@ let flights = [
   },
 ];
 
+// Popular destinations : 
+let popular_destinatons = [
+  {
+    id: 1,
+    city: 'Roma',
+    image: 'https:\\test.com',
+    price: 1200
+  },
+  {
+    id: 2,
+    city: 'Japan',
+    image: 'https://cdn.pixabay.com/photo/2017/01/28/02/24/japan-2014618_1280.jpg',
+    price: 1200
+  },
+  {
+    id: 4,
+    city: 'Paris',
+    image: 'https:\\test.com',
+    price: 1200
+  },
+  {
+    id: 5,
+    city: 'New York',
+    image: 'https:\\test.com',
+    price: 1200
+  },
+  {
+    id: 6,
+    city: 'Madrid',
+    image: 'https:\\test.com',
+    price: 1200
+  },
+  {
+    id: 7,
+    city: 'Madrid',
+    image: 'https:\\test.com',
+    price: 1200
+  },
+]
+
 // Route to get all flights
 app.get('/flights', (req, res) => {
   res.json(flights);
@@ -201,12 +235,13 @@ app.post('/flights', (req, res) => {
 });
 
 // Route to get all popular destinations : 
-app.get("/flights/popular", (req, res) => {
-  const popular = flights.map((flight) => {
-    return flight.popular;
-  })
-})
+// app.get('/popular', (req, res) => {
+//   const popular = popular_destinatons.map((popular) => {
+//     return popular;
+//   })
+//   res.json(popular_destinatons) ;
+// })
 
-app.listen(3000, () => {
-  console.log('Flights API listening on port 3000');
+app.listen(port, () => {
+  console.log("Happy coding !!");
 });
